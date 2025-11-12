@@ -1,3 +1,16 @@
+# Project-specific ignores
+data/
+results/
+doc/*.DS_Store
+__pycache__/
+.env
+kaggle.json
+.ipynb_checkpoints/
+.DS_Store
+*.log
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
