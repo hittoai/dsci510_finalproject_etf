@@ -35,6 +35,10 @@ I do not upload any raw data files to this repository. All data is fetched by co
 
 No API keys are needed for this project.
 
+## Simulation Model Description
+
+All simulations in this project use simple, deterministic monthly compounding based on constant average annual return assumptions. No predictions or machine learning models are used. Portfolio values are calculated using fixed monthly contributions from age 22 to 65 using standard compound growth formulas. This allows for clear and controlled comparisons between different investing strategies.
+
 ---
 
 ## Analysis
