@@ -92,11 +92,15 @@ The slides in `docs/Sangwoo_Choi_presentation.pdf` give a visual summary of thes
 │   ├── fetch.py
 │   ├── metrics.py
 │   └── viz.py
-├── main.py
-├── tests.py
-├── requirements.txt
+├── .env.example
+├── .gitignore
+├── LICENSE
 ├── README.md
-└── .gitignore
+├── main.py
+├── requirements.txt
+├── results.ipynb
+└── tests.py
+
 
 
 ## How to run
