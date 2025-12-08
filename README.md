@@ -97,3 +97,46 @@ The slides in `docs/Sangwoo_Choi_presentation.pdf` give a visual summary of thes
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+
+
+## How to run
+
+1. Make sure you have Python 3.10 or newer installed.
+
+2. Clone this repository or download it as a zip and open a terminal in the project folder.
+
+3. (Optional but recommended) create and activate a virtual environment.
+
+   On macOS / Linux:
+
+       python -m venv venv
+       source venv/bin/activate
+
+   On Windows:
+
+       python -m venv venv
+       venv\Scripts\activate
+
+4. Install the Python packages:
+
+       pip install -r requirements.txt
+
+5. Run the full pipeline from the command line:
+
+       python main.py
+
+   This will:
+   - download ETF price data from Yahoo Finance with yfinance  
+   - compute the metrics for each ETF  
+   - create all PNG charts and CSV files inside the `results` folder
+
+6. (Optional) run the tests.
+
+   If you have pytest installed, you can run:
+
+       python -m pytest tests.py
+
+   These tests are simple checks that the main helper functions work on dummy data.
+
+7. To explore the analysis in a notebook, open `results.ipynb` in Jupyter Notebook, JupyterLab, or VS Code and run the cells from top to bottom.  
+   The notebook imports functions from `src/` and reproduces the same steps as `main.py`.
