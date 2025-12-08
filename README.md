@@ -101,42 +101,31 @@ The slides in `docs/Sangwoo_Choi_presentation.pdf` give a visual summary of thes
 
 ## How to run
 
-1. Make sure you have Python 3.10 or newer installed.
+1. Make sure you have Python 3.10 or newer.
 
-2. Clone this repository or download it as a zip and open a terminal in the project folder.
+2. Download this project or clone the repository, then open a terminal in the project folder.
 
-3. (Optional but recommended) create and activate a virtual environment.
+3. (Optional) Create a virtual environment.
 
-   On macOS / Linux:
+On macOS or Linux:
 
-       python -m venv venv
-       source venv/bin/activate
+    python -m venv venv
+    source venv/bin/activate
 
-   On Windows:
+On Windows:
 
-       python -m venv venv
-       venv\Scripts\activate
+    python -m venv venv
+    venv\Scripts\activate
 
-4. Install the Python packages:
+4. Install the required packages:
 
-       pip install -r requirements.txt
+    pip install -r requirements.txt
 
-5. Run the full pipeline from the command line:
+5. Run the main script:
 
-       python main.py
+    python main.py
 
-   This will:
-   - download ETF price data from Yahoo Finance with yfinance  
-   - compute the metrics for each ETF  
-   - create all PNG charts and CSV files inside the `results` folder
+This will download the ETF data, calculate the metrics, and save all charts and CSV files into the `results` folder.
 
-6. (Optional) run the tests.
+6. (Optional) If you want to view the results in a notebook, open `results.ipynb` and run the cells from top to bottom.
 
-   If you have pytest installed, you can run:
-
-       python -m pytest tests.py
-
-   These tests are simple checks that the main helper functions work on dummy data.
-
-7. To explore the analysis in a notebook, open `results.ipynb` in Jupyter Notebook, JupyterLab, or VS Code and run the cells from top to bottom.  
-   The notebook imports functions from `src/` and reproduces the same steps as `main.py`.
