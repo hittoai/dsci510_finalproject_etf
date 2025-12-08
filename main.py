@@ -2,7 +2,17 @@
 # DSCI 510 Final Project
 # Building a Set-and-Forget ETF Strategy for Graduate Students
 
-from src.config import RESULTS_DIR, TICKERS, START_DATE
+
+from src.config import (
+    RESULTS_DIR,
+    TICKERS,
+    START_DATE,
+    DCA_MONTHLY,
+    DCA_START_AGE,
+    DCA_END_AGE,
+    DCA_RETURNS,
+)
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -82,18 +92,16 @@ def run_etf_analysis():
     # $200/month DCA from age 22 to 65
     print("Simulating $200/month DCA into single ETFs (22 to 65)...")
 
-    dca_tickers = ["QQQ", "SPY", "VIG"]
-    assumed_returns = {"QQQ": 0.13, "SPY": 0.09, "VIG": 0.07}
-
+    dca_tickers = list(DCA_RETURNS.keys())
     dca_df = pd.DataFrame()
 
     for t in dca_tickers:
-        r = assumed_returns[t]
+        r = DCA_RETURNS[t]
         series = dca_constant_return(
             cagr_value=r,
-            monthly=200.0,
-            start_age=22,
-            end_age=65,
+            monthly=DCA_MONTHLY,
+            start_age=DCA_START_AGE,
+            end_age=DCA_END_AGE,
         )
         dca_df[t] = series.values
 
@@ -105,9 +113,9 @@ def run_etf_analysis():
 
     ax = plt.gca()
 
-    # x-axis: ages 22 to 65
-    start_age = 22
-    end_age = 65
+    # x-axis: ages from config
+    start_age = DCA_START_AGE
+    end_age = DCA_END_AGE
     ages = list(range(start_age, end_age + 1, 5))
     age_months = [(age - start_age) * 12 for age in ages]
     ax.set_xticks(age_months)
